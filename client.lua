@@ -52,8 +52,7 @@ function calculateHorseShoeLossChance(player, horse)
     -- Calculate the chance of losing a shoe based on speed
     if speed > Config.fast_speed_threshold then
         chance = Config.fast_speed_shoe_loss_chance
-    elseif speed > Config.medium_speed_threshold
-        elseif speed > Config.medium_speed_threshold then
+    elseif speed > Config.medium_speed_threshold then
         chance = Config.medium_speed_shoe_loss_chance
     else
         chance = Config.slow_speed_shoe_loss_chance
