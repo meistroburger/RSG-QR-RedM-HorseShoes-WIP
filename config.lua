@@ -1,13 +1,22 @@
--- Chance of losing a shoe at different speeds
-speed1Chance = 0
-speed2Chance = 0.1
-speed3Chance = 0.2
-speed4Chance = 0.3
-speed5Chance = 0.4
+local OxMySQL = require "oxmysql"
 
--- Number of shoes that can be lost at different speeds
-speed1MaxLoss = 0
-speed2MaxLoss = 1
-speed3MaxLoss = 2
-speed4MaxLoss = 3
-speed5MaxLoss = 4
+-- Configuration for the horse shoeing mod
+
+-- Database connection details
+Config = {
+    -- Time (in seconds) it takes to fit a shoe
+    shoe_fitting_time = 15,
+
+    -- Chance of losing a shoe at different speeds
+    fast_speed_threshold = 60.0,
+    fast_speed_shoe_loss_chance = 0.05,
+    medium_speed_threshold = 40.0,
+    medium_speed_shoe_loss_chance = 0.03,
+    slow_speed_shoe_loss_chance = 0.01,
+
+    -- Chance of losing a shoe when in a river
+    river_shoe_loss_chance = 0.03
+}
+
+--connect to the database using OxMySQL
+db = OxMySQL.open(Config.db_host, Config.db_username, Config.db_password, Config.db_database)
